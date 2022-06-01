@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         //We'll move the vehicle forward
         //Time.deltaTime을 이용하여 차량의 이동속도를 보정
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
