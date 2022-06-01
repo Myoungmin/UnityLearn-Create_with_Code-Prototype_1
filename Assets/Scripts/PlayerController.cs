@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float turnSpeed;
-    public float horizontalInput;
-    public float forwardInput;
+    private float speed = 20.0f;
+    private float turnSpeed = 45.0f;
+    private float horizontalInput;
+    private float forwardInput;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // This is where we get Player input
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        //We'll move the vehicle forward
         //Time.deltaTime을 이용하여 차량의 이동속도를 보정
+        // Moves the cat forward based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        
         //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        
+        // Rotates the car based on horizontal input
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
     }
 }
