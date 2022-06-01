@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         // 플레이어 뒤에 카메라를 위치시키기 위한 오프셋
         transform.position = player.transform.position + offset;
