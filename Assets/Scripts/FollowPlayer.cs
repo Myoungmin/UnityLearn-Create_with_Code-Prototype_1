@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
+    private Vector3 offset = new Vector3(0, 5, -7);
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,6 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         // 플레이어 뒤에 카메라를 위치시키기 위한 오프셋
-        transform.position = player.transform.position + new Vector3(0, 5, -7);
+        transform.position = player.transform.position + offset;
     }
 }
