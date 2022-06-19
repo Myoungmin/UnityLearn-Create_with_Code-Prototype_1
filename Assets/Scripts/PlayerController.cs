@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
     private Rigidbody playerRb;
+    [SerializeField] GameObject centerOfMass;
 
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerRb.centerOfMass = centerOfMass.transform.position;
     }
 
     // Update is called once per frame
